@@ -1,6 +1,4 @@
-// Rock Paper Scissors game
-
-// Create function comuterPlay that returns 'Rock', 'Paper', or 'Scissors' at random
+// comuterPlay() returns 'Rock', 'Paper', or 'Scissors' at random
 function computerPlay() {
     computerSelection = Math.random()
 
@@ -18,10 +16,10 @@ function computerPlay() {
     }
 }
 
-// Create function that plays one round of Rock Paper Scissors and returns a corresponding string. Functon has two parameters - playerSelection and computerSelection
+// playRound() plays one round of Rock Paper Scissors and returns a corresponding string
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt('Rock, paper, or scissors?', '')
-// The user input, playerSelection, made case-insensitive
+// playerSelection is made case-insensitive
     playerSelection = playerSelection.trim()
     playerSelection = playerSelection.toLowerCase()
 
@@ -54,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Create function game that keeps score in a five-round game
+// game() keeps score in a five-round game
 function game() {
 
     let playerScore = 0
