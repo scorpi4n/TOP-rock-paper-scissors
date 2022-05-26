@@ -82,7 +82,7 @@ function reset() {
     playerScore = 0
     computerScore = 0
 
-    gameStatus.innerText = "Let's play!"
+    gameStatus.innerText = "Let's play! First to 5 wins"
     resultsPara.innerText = ''
     winnerLoser.innerText = ''
 }
@@ -99,7 +99,7 @@ function play(choice) {
             computerScore++
         }
 
-        gameStatus.innerText = 'Playing...'
+        gameStatus.innerText = `Your score is ${playerScore}/5 and mine is ${computerScore}/5`
 
         console.log(playerScore)
         console.log(computerScore)
@@ -110,7 +110,7 @@ function play(choice) {
     if (playerScore === 5 || computerScore === 5) {
 
         if (playerScore === 5) {
-            gameStatus.innerText = 'That was exhilerating! Do it again!'
+            gameStatus.innerText = "That was exhilerating! Let's do it again!"
             resultsPara.innerText = 'Congrats!'
             winnerLoser.innerText = 'Good game, you won!'
         } else if (computerScore === 5) {
