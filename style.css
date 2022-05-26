@@ -16,6 +16,19 @@ body {
     color: whitesmoke;
 }
 
+div {
+    display: flex;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    text-align: center;
+}
+
 button {
     width: 10rem;
 }
