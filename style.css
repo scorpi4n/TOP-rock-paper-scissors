@@ -1,0 +1,21 @@
+:root {
+    --dark-grey: rgb(20, 20, 20);
+    --dark-green: #036846;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(var(--dark-grey), var(--dark-green));
+    color: whitesmoke;
+}
+
+button {
+    width: 10rem;
+}
