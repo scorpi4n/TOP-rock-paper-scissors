@@ -1,6 +1,15 @@
 // HTML elements
 const resultsPara = document.getElementById('results')
 const winnerLoser = document.getElementById('winnerLoser')
+const gameStatus = document.getElementById('gameStatus')
+
+const playAgain = document.createElement('button')
+playAgain.innerText = 'Play again'
+playAgain.addEventListener('click', reset)
+
+// global variables
+let playerScore = 0
+let computerScore = 0
 
 // comuterPlay() returns 'Rock', 'Paper', or 'Scissors' at random
 function computerPlay() {
@@ -51,29 +60,35 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerScore = 0
-let computerScore = 0
+function reset() {
 
-const rockBtn = document.getElementById('rock-button')
-const paperBtn = document.getElementById('paper-button')
-const scissorsBtn = document.getElementById('scissors-button')
+    const rockBtn = document.getElementById('rock-button')
+    const paperBtn = document.getElementById('paper-button')
+    const scissorsBtn = document.getElementById('scissors-button')
 
-rockBtn.addEventListener('click', () => {
-    play('rock')
-    // playRound('rock')
-})
-paperBtn.addEventListener('click', () => {
-    play('paper')
-    // playRound('paper')
-})
-scissorsBtn.addEventListener('click', () => {
-    play('scissors')
-    // playRound('scissors')
-})
+    rockBtn.addEventListener('click', () => {
+        play('rock')
+        // playRound('rock')
+    })
+    paperBtn.addEventListener('click', () => {
+        play('paper')
+        // playRound('paper')
+    })
+    scissorsBtn.addEventListener('click', () => {
+        play('scissors')
+        // playRound('scissors')
+    })
 
+    playerScore = 0
+    computerScore = 0
 
+    gameStatus.innerText = "Let's play!"
+    resultsPara.innerText = ''
+    winnerLoser.innerText = ''
+}
+reset()
 
-// game() keeps score in a five-round game
+// play() accepts button input and plays a round of rps and keeps score
 function play(choice) {
     while (playerScore < 5 && computerScore < 5) {
         roundResult = playRound(choice)
@@ -84,6 +99,8 @@ function play(choice) {
             computerScore++
         }
 
+        gameStatus.innerText = 'Playing...'
+
         console.log(playerScore)
         console.log(computerScore)
 
@@ -93,16 +110,16 @@ function play(choice) {
     if (playerScore === 5 || computerScore === 5) {
 
         if (playerScore === 5) {
+            gameStatus.innerText = 'That was exhilerating! Do it again!'
+            resultsPara.innerText = 'Congrats!'
             winnerLoser.innerText = 'Good game, you won!'
-            // playerScore = 0
-            // computerScore = 0
         } else if (computerScore === 5) {
+            gameStatus.innerText = 'I really thought you would have won that!'
+            resultsPara.innerText = "You can't win em all..."
             winnerLoser.innerText = 'You lost, play again?'
-            // playerScore = 0
-            // computerScore = 0
         }
-        playerScore = 0
-        computerScore = 0
+
+        winnerLoser.appendChild(playAgain)
     }
 
 }
