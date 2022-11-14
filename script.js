@@ -1,5 +1,5 @@
 // HTML elements
-const resultsPara = document.getElementById('results')
+const resultsEl = document.getElementById('results')
 const winnerLoser = document.getElementById('winnerLoser')
 const gameStatus = document.getElementById('gameStatus')
 
@@ -25,7 +25,7 @@ function computerPlay() {
         computerSelection = 'scissors'
         return computerSelection
     } else {
-        resultsPara.innerText = 'An error occured. Please try again.'
+        resultsEl.innerText = 'An error occured. Please try again.'
     }
 }
 
@@ -34,56 +34,52 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay()
 
     if (playerSelection === computerSelection) {
-        resultsPara.innerText = ("It's a tie! Try again")
+        resultsEl.innerText = ("It's a tie! Try again")
         return 'other'
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        resultsPara.innerText = ('You chose rock and I chose paper, so you lose.')
+        resultsEl.innerText = ('You chose rock and I chose paper, so you lose.')
         return 'lose'
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        resultsPara.innerText = ('You chose rock and I chose scissors so you win! Keep it up!')
+        resultsEl.innerText = ('You chose rock and I chose scissors so you win! Keep it up!')
         return 'win'
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        resultsPara.innerText = ('You chose paper and I chose rock so you win! Keep it up!')
+        resultsEl.innerText = ('You chose paper and I chose rock so you win! Keep it up!')
         return 'win'
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        resultsPara.innerText = ('You chose paper and I chose scissors so you lose.')
+        resultsEl.innerText = ('You chose paper and I chose scissors so you lose.')
         return 'lose'
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        resultsPara.innerText = ('You chose scissors and I chose rock so you lose.')
+        resultsEl.innerText = ('You chose scissors and I chose rock so you lose.')
         return 'lose'
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        resultsPara.innerText = ('You chose scissors and I chose paper so you win! Keep it up!')
+        resultsEl.innerText = ('You chose scissors and I chose paper so you win! Keep it up!')
         return 'win'
     } else if (playerSelection !== 'rock' || 'paper' || 'scissors') {
-        resultsPara.innerText = ('Please enter rock, paper, or scissors.')
+        resultsEl.innerText = ('Please enter rock, paper, or scissors.')
         return 'other'
     }
 }
 
 function reset() {
+    const rockBtn = document.getElementById('rock-btn')
+    const paperBtn = document.getElementById('paper-btn')
+    const scissorsBtn = document.getElementById('scissors-btn')
 
-    const rockBtn = document.getElementById('rock-button')
-    const paperBtn = document.getElementById('paper-button')
-    const scissorsBtn = document.getElementById('scissors-button')
-
-    rockBtn.addEventListener('click', () => {
+    rockBtn.addEventListener('click', function() {
         play('rock')
-        // playRound('rock')
     })
-    paperBtn.addEventListener('click', () => {
+    paperBtn.addEventListener('click', function() {
         play('paper')
-        // playRound('paper')
     })
-    scissorsBtn.addEventListener('click', () => {
+    scissorsBtn.addEventListener('click', function() {
         play('scissors')
-        // playRound('scissors')
     })
 
     playerScore = 0
     computerScore = 0
 
     gameStatus.innerText = "Let's play! First to 5 wins"
-    resultsPara.innerText = ''
+    resultsEl.innerText = ''
     winnerLoser.innerText = ''
 }
 reset()
@@ -111,11 +107,11 @@ function play(choice) {
 
         if (playerScore === 5) {
             gameStatus.innerText = "That was exhilerating! Let's do it again!"
-            resultsPara.innerText = 'Congrats!'
+            resultsEl.innerText = 'Congrats!'
             winnerLoser.innerText = 'Good game, you won!'
         } else if (computerScore === 5) {
             gameStatus.innerText = 'I really thought you would have won that!'
-            resultsPara.innerText = "You can't win em all..."
+            resultsEl.innerText = "You can't win em all..."
             winnerLoser.innerText = 'You lost, play again?'
         }
 

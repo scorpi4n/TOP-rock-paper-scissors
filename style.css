@@ -4,16 +4,13 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    box-sizing: border-box;
+    background: linear-gradient(var(--dark-grey), 65%, var(--dark-green));
+    background-size: cover;
+    color: whitesmoke;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background: linear-gradient(var(--dark-grey), var(--dark-green));
-    color: whitesmoke;
 }
 
 div {
@@ -31,4 +28,39 @@ p {
 
 button {
     width: 10rem;
+}
+
+.gapped {
+    display: flex;
+    gap: 2rem;
+}
+
+.btn {
+    border: none;
+    background-size: cover;
+    padding: 3rem 6rem;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn>span {
+    border-radius: .5rem;
+    background-color: var(--dark-grey);
+    color: whitesmoke;
+    padding: .5rem;
+}
+
+#rock-btn {
+    background-image: url(assets/rock.jpg);
+}
+
+#paper-btn {
+    background-image: url(assets/paper.jpg);
+}
+
+#scissors-btn {
+    background-image: url(assets/scissors.jpg);
 }
