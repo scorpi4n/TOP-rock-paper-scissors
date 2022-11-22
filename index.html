@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script type="module" src="main.js" defer></script>
 </head>
+
 <body>
     <h1 id="gameStatus"></h1>
-    <div class="gapped">
-        <button class="btn" id="rock-btn"><span>Rock</span></button>
-        <button class="btn" id="paper-btn"><span>Paper</span></button>
-        <button class="btn" id="scissors-btn"><span>Scissors</span></button>
+    <div>
+        <button id="rock-button">Rock</button>
+        <button id="paper-button">Paper</button>
+        <button id="scissors-button">Scissors</button>
     </div>
     <div class="vertical">
         <p id="results"></p>
         <p id="winnerLoser" class="vertical"></p>
     </div>
 </body>
+
 </html>
