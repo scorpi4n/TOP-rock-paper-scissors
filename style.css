@@ -15,6 +15,7 @@ body {
 
 div {
     display: flex;
+    gap: 2rem;
 }
 
 .vertical {
@@ -27,40 +28,11 @@ p {
 }
 
 button {
-    width: 10rem;
-}
-
-.gapped {
-    display: flex;
-    gap: 2rem;
-}
-
-.btn {
+    width: auto;
+    margin-block: 1rem;
+    padding: 2rem 2.5rem;
+    font-size: 3rem;
     border: none;
-    background-size: cover;
-    padding: 3rem 6rem;
-    border-radius: 1rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn>span {
     border-radius: .5rem;
-    background-color: var(--dark-grey);
-    color: whitesmoke;
-    padding: .5rem;
-}
-
-#rock-btn {
-    background-image: url(assets/rock.jpg);
-}
-
-#paper-btn {
-    background-image: url(assets/paper.jpg);
-}
-
-#scissors-btn {
-    background-image: url(assets/scissors.jpg);
+    background-color: rgb(45, 45, 45);
 }

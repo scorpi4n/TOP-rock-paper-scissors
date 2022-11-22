@@ -58,9 +58,9 @@ export function playRound(playerSelection, computerSelection) {
 
 export function reset() {
 
-	const rockBtn = document.getElementById('rock-button')
-	const paperBtn = document.getElementById('paper-button')
-	const scissorsBtn = document.getElementById('scissors-button')
+	const rockBtn = document.getElementById('rock-btn')
+	const paperBtn = document.getElementById('paper-btn')
+	const scissorsBtn = document.getElementById('scissors-btn')
 
 	rockBtn.addEventListener('click', () => {
 		play('rock')
