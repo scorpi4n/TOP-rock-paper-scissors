@@ -1,3 +1,4 @@
+import '/reset.css'
 import '/style.css'
 import * as rps from '/rps.js'
 
